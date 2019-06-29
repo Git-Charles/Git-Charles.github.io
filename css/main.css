@@ -1085,7 +1085,7 @@ pre .javascript .function {
   }
 }
 .header {
-  background: transparent;
+  background: url("../image/logo.jpg");
 }
 .header-inner {
   position: relative;
@@ -1988,7 +1988,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #224734;
+  background: #9c9605;
 }
 .feed-link,
 .chat {
