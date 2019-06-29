@@ -100,9 +100,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'BB1WWBFL9Q',
+      apiKey: '21e57a8b1e5dc70a1d5786ba9bc8d3d8',
+      indexName: 'Hexo Blog',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -340,11 +340,44 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="algolia-popup popup search-popup">
+  <div class="algolia-search">
+    <div class="algolia-search-input-icon">
+      <i class="fa fa-search"></i>
+    </div>
+    <div class="algolia-search-input" id="algolia-search-input"></div>
+  </div>
+
+  <div class="algolia-results">
+    <div id="algolia-stats"></div>
+    <div id="algolia-hits"></div>
+    <div id="algolia-pagination" class="algolia-pagination"></div>
+  </div>
+
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -370,6 +403,239 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lei_charles.gitee.io/blog/blog/20190629-001/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lei_charles">
+      <meta itemprop="description" content="专注分享java，大数据，linux等相关知识">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大数据-ZEALOTS">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/20190629-001/" class="post-title-link" itemprop="url">利用 JsonSerde 为复杂 JSON 格式数据创建 Hive 表结构</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 10:49:49" itemprop="dateCreated datePublished" datetime="2019-06-29T10:49:49+08:00">2019-06-29</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-30 00:01:07" itemprop="dateModified" datetime="2019-06-30T00:01:07+08:00">2019-06-30</time>
+              </span>
+            
+          
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">8.2k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">7 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p><strong>配置java，maven等环境变量</strong></p>
+<p><strong>java:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$CLASSPATH</span><br></pre></td></tr></table></figure>
+
+<p><strong>maven:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MVN_HOME=/usr/local/maven</span><br><span class="line">export PATH=$MVN_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>下载 hive-json-schema</strong>    </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 cloudera]# git clone https://github.com/quux00/hive-json-schema.git</span><br><span class="line">正克隆到 'hive-json-schema'...</span><br><span class="line">remote: Enumerating objects: 155, done.</span><br><span class="line">remote: Total 155 (delta 0), reused 0 (delta 0), pack-reused 155</span><br><span class="line">接收对象中: 100% (155/155), 142.85 KiB | 34.00 KiB/s, done.</span><br><span class="line">处理 delta 中: 100% (35/35), done.</span><br><span class="line">[root@cdh01 cloudera]# cd hive-json-schema/</span><br><span class="line">[root@cdh01 hive-json-schema]# ll</span><br><span class="line">总用量 8</span><br><span class="line">-rw-r--r-- 1 root root 1610 6月  27 23:25 pom.xml</span><br><span class="line">-rw-r--r-- 1 root root 3873 6月  27 23:25 README.md</span><br><span class="line">drwxr-xr-x 3 root root   18 6月  27 23:25 src</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>maven 打包</strong>    </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]# mvn package</span><br><span class="line">[INFO] Scanning for projects...</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] Some problems were encountered while building the effective model for net.thornydev:json-hive-schema:jar:1.0</span><br><span class="line">[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 13, column 15</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.</span><br><span class="line">[WARNING] </span><br><span class="line">[INFO]                                                                         </span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Building json-hive-schema 1.0</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/main/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ json-hive-schema ---</span><br><span class="line">[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!</span><br><span class="line">[INFO] Compiling 8 source files to /root/github/cloudera/hive-json-schema/target/classes</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/test/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ json-hive-schema ---</span><br><span class="line">[INFO] No sources to compile</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ json-hive-schema ---</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"> T E S T S</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Results :</span><br><span class="line"></span><br><span class="line">Tests run: 0, Failures: 0, Errors: 0, Skipped: 0</span><br><span class="line"></span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0.jar</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-assembly-plugin:2.4:single (default) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 29.893s</span><br><span class="line">[INFO] Finished at: Thu Jun 27 23:26:07 CST 2019</span><br><span class="line">[INFO] Final Memory: 19M/206M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[root@cdh01 hive-json-schema]# ll target/</span><br><span class="line">总用量 64</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 archive-tmp</span><br><span class="line">drwxr-xr-x 4 root root    28 6月  27 23:25 classes</span><br><span class="line">drwxr-xr-x 3 root root    25 6月  27 23:25 generated-sources</span><br><span class="line">-rw-r--r-- 1 root root 29091 6月  27 23:25 json-hive-schema-1.0.jar</span><br><span class="line">-rw-r--r-- 1 root root 29124 6月  27 23:26 json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">drwxr-xr-x 2 root root    28 6月  27 23:25 maven-archiver</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 surefire</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>生成 Hive 建表语句</strong></p>
+<p>测试用 json 数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"my doc"</span>,</span><br><span class="line">  <span class="attr">"foo"</span>: &#123;</span><br><span class="line">    <span class="attr">"bar"</span>: <span class="string">"baz"</span>,</span><br><span class="line">    <span class="attr">"quux"</span>: <span class="string">"revlos"</span>,</span><br><span class="line">    <span class="attr">"level1"</span> : &#123;</span><br><span class="line">      <span class="attr">"l2string"</span>: <span class="string">"l2val"</span>,</span><br><span class="line">      <span class="attr">"l2struct"</span>: &#123;</span><br><span class="line">        <span class="attr">"level3"</span>: <span class="string">"l3val"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"wibble"</span>: <span class="string">"123"</span>,</span><br><span class="line">  <span class="attr">"wobble"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"lazybones"</span>,</span><br><span class="line">        <span class="attr">"details2"</span>: <span class="number">414</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"entry 123"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一 不可执行的jar</span></span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span><br><span class="line"><span class="comment"># 方式二 可执行的jar</span></span><br><span class="line">java -jar target/json-hive-schema-1.0-jar-<span class="keyword">with</span>-dependencies.jar file.json</span><br><span class="line"><span class="keyword">java</span> -jar target/<span class="keyword">json</span>-hive-<span class="keyword">schema</span><span class="number">-1.0</span>-jar-<span class="keyword">with</span>-dependencies.jar file.json table_name</span><br></pre></td></tr></table></figure>
+
+<p>生成建表语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>验证 Hive 表结构</strong></p>
+<p>测试数据 file.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mydoc"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"baz"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;,&#123;<span class="attr">"entry"</span>:<span class="number">2</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"entry123"</span>&#125;&#125;]&#125;</span><br><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mytxt"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"sas"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; CREATE TABLE table_name (</span><br><span class="line">&gt;   description string,</span><br><span class="line">&gt;   foo struct&lt;bar:string, level1:struct&lt;l2string:string, l2struct:struct&lt;level3:string&gt;&gt;, quux:string&gt;,</span><br><span class="line">&gt;   wibble string,</span><br><span class="line">&gt;   wobble array&lt;struct&lt;entry:int, entrydetails:struct&lt;details1:string, details2:int&gt;&gt;&gt;)</span><br><span class="line">&gt; ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe';</span><br><span class="line">OK</span><br><span class="line">Time taken: 0.135 seconds</span><br></pre></td></tr></table></figure>
+
+<p>加载数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/root/tmp/file.json'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
+
+<p>查询数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name;</span><br><span class="line"><span class="keyword">SELECT</span> wobble.entry, wobble.EntryDetails.details1, wobble.EntryDetails[<span class="number">0</span>].details2 <span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190627235452203.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br><img src="https://img-blog.csdnimg.cn/20190627235624581.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+    <div>
+      
+    </div>
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -673,229 +939,6 @@
         
           
             
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-    <div>
-      
-    </div>
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lei_charles.gitee.io/blog/blog/20190629-001/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="lei_charles">
-      <meta itemprop="description" content="专注分享java，大数据，linux等相关知识">
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="大数据-ZEALOTS">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/20190629-001/" class="post-title-link" itemprop="url">利用 JsonSerde 为复杂 JSON 格式数据创建 Hive 表结构</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-29 10:49:49 / 修改时间：20:45:02" itemprop="dateCreated datePublished" datetime="2019-06-29T10:49:49+08:00">2019-06-29</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">8.2k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">7 分钟</span>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p><strong>配置java，maven等环境变量</strong></p>
-<p><strong>java:</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$CLASSPATH</span><br></pre></td></tr></table></figure>
-
-<p><strong>maven:</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MVN_HOME=/usr/local/maven</span><br><span class="line">export PATH=$MVN_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
-
-<p>​</p>
-</li>
-<li><p><strong>下载 hive-json-schema</strong>    </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 cloudera]# git clone https://github.com/quux00/hive-json-schema.git</span><br><span class="line">正克隆到 'hive-json-schema'...</span><br><span class="line">remote: Enumerating objects: 155, done.</span><br><span class="line">remote: Total 155 (delta 0), reused 0 (delta 0), pack-reused 155</span><br><span class="line">接收对象中: 100% (155/155), 142.85 KiB | 34.00 KiB/s, done.</span><br><span class="line">处理 delta 中: 100% (35/35), done.</span><br><span class="line">[root@cdh01 cloudera]# cd hive-json-schema/</span><br><span class="line">[root@cdh01 hive-json-schema]# ll</span><br><span class="line">总用量 8</span><br><span class="line">-rw-r--r-- 1 root root 1610 6月  27 23:25 pom.xml</span><br><span class="line">-rw-r--r-- 1 root root 3873 6月  27 23:25 README.md</span><br><span class="line">drwxr-xr-x 3 root root   18 6月  27 23:25 src</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>maven 打包</strong>    </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]# mvn package</span><br><span class="line">[INFO] Scanning for projects...</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] Some problems were encountered while building the effective model for net.thornydev:json-hive-schema:jar:1.0</span><br><span class="line">[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 13, column 15</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.</span><br><span class="line">[WARNING] </span><br><span class="line">[INFO]                                                                         </span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Building json-hive-schema 1.0</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/main/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ json-hive-schema ---</span><br><span class="line">[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!</span><br><span class="line">[INFO] Compiling 8 source files to /root/github/cloudera/hive-json-schema/target/classes</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/test/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ json-hive-schema ---</span><br><span class="line">[INFO] No sources to compile</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ json-hive-schema ---</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"> T E S T S</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Results :</span><br><span class="line"></span><br><span class="line">Tests run: 0, Failures: 0, Errors: 0, Skipped: 0</span><br><span class="line"></span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0.jar</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-assembly-plugin:2.4:single (default) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 29.893s</span><br><span class="line">[INFO] Finished at: Thu Jun 27 23:26:07 CST 2019</span><br><span class="line">[INFO] Final Memory: 19M/206M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[root@cdh01 hive-json-schema]# ll target/</span><br><span class="line">总用量 64</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 archive-tmp</span><br><span class="line">drwxr-xr-x 4 root root    28 6月  27 23:25 classes</span><br><span class="line">drwxr-xr-x 3 root root    25 6月  27 23:25 generated-sources</span><br><span class="line">-rw-r--r-- 1 root root 29091 6月  27 23:25 json-hive-schema-1.0.jar</span><br><span class="line">-rw-r--r-- 1 root root 29124 6月  27 23:26 json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">drwxr-xr-x 2 root root    28 6月  27 23:25 maven-archiver</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 surefire</span><br></pre></td></tr></table></figure>
-
-<p>​</p>
-</li>
-<li><p><strong>生成 Hive 建表语句</strong></p>
-<p>测试用 json 数据</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"my doc"</span>,</span><br><span class="line">  <span class="attr">"foo"</span>: &#123;</span><br><span class="line">    <span class="attr">"bar"</span>: <span class="string">"baz"</span>,</span><br><span class="line">    <span class="attr">"quux"</span>: <span class="string">"revlos"</span>,</span><br><span class="line">    <span class="attr">"level1"</span> : &#123;</span><br><span class="line">      <span class="attr">"l2string"</span>: <span class="string">"l2val"</span>,</span><br><span class="line">      <span class="attr">"l2struct"</span>: &#123;</span><br><span class="line">        <span class="attr">"level3"</span>: <span class="string">"l3val"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"wibble"</span>: <span class="string">"123"</span>,</span><br><span class="line">  <span class="attr">"wobble"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"lazybones"</span>,</span><br><span class="line">        <span class="attr">"details2"</span>: <span class="number">414</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"entry 123"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一 不可执行的jar</span></span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span><br><span class="line"><span class="comment"># 方式二 可执行的jar</span></span><br><span class="line">java -jar target/json-hive-schema-1.0-jar-<span class="keyword">with</span>-dependencies.jar file.json</span><br><span class="line"><span class="keyword">java</span> -jar target/<span class="keyword">json</span>-hive-<span class="keyword">schema</span><span class="number">-1.0</span>-jar-<span class="keyword">with</span>-dependencies.jar file.json table_name</span><br></pre></td></tr></table></figure>
-
-<p>生成建表语句</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>​</p>
-</li>
-<li><p><strong>验证 Hive 表结构</strong></p>
-<p>测试数据 file.json</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mydoc"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"baz"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;,&#123;<span class="attr">"entry"</span>:<span class="number">2</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"entry123"</span>&#125;&#125;]&#125;</span><br><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mytxt"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"sas"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>
-
-<p>创建表</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; CREATE TABLE table_name (</span><br><span class="line">&gt;   description string,</span><br><span class="line">&gt;   foo struct&lt;bar:string, level1:struct&lt;l2string:string, l2struct:struct&lt;level3:string&gt;&gt;, quux:string&gt;,</span><br><span class="line">&gt;   wibble string,</span><br><span class="line">&gt;   wobble array&lt;struct&lt;entry:int, entrydetails:struct&lt;details1:string, details2:int&gt;&gt;&gt;)</span><br><span class="line">&gt; ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe';</span><br><span class="line">OK</span><br><span class="line">Time taken: 0.135 seconds</span><br></pre></td></tr></table></figure>
-
-<p>加载数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/root/tmp/file.json'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
-
-<p>查询数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name;</span><br><span class="line"><span class="keyword">SELECT</span> wobble.entry, wobble.EntryDetails.details1, wobble.EntryDetails[<span class="number">0</span>].details2 <span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/20190627235452203.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br><img src="https://img-blog.csdnimg.cn/20190627235624581.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
-</li>
-</ol>
-
           
         
       
@@ -1488,6 +1531,19 @@
 
   
 
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/blog/js/algolia-search.js?v=7.1.2"></script>
 
 
 
