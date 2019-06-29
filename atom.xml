@@ -3,11 +3,11 @@
   <title>大数据-ZEALOTS</title>
   
   <subtitle>把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://lei_charles.gitee.io/blog/"/>
   <updated>2019-06-29T07:35:39.193Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://lei_charles.gitee.io/blog/</id>
   
   <author>
     <name>lei_charles</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2019/06/29/hello-world/"/>
-    <id>http://yoursite.com/2019/06/29/hello-world/</id>
+    <link href="https://lei_charles.gitee.io/blog/2019/06/29/hello-world/"/>
+    <id>https://lei_charles.gitee.io/blog/2019/06/29/hello-world/</id>
     <published>2019-06-29T07:35:39.193Z</published>
     <updated>2019-06-29T07:35:39.193Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>My Gallery</title>
-    <link href="http://yoursite.com/2019/06/29/My-Gallery/"/>
-    <id>http://yoursite.com/2019/06/29/My-Gallery/</id>
+    <link href="https://lei_charles.gitee.io/blog/2019/06/29/My-Gallery/"/>
+    <id>https://lei_charles.gitee.io/blog/2019/06/29/My-Gallery/</id>
     <published>2019-06-29T03:19:53.000Z</published>
     <updated>2019-06-29T03:19:53.886Z</updated>
     
@@ -53,8 +53,8 @@
   
   <entry>
     <title>利用 JsonSerde 为复杂 JSON 格式数据创建 Hive 表结构</title>
-    <link href="http://yoursite.com/2019/06/29/20190629-001/"/>
-    <id>http://yoursite.com/2019/06/29/20190629-001/</id>
+    <link href="https://lei_charles.gitee.io/blog/2019/06/29/20190629-001/"/>
+    <id>https://lei_charles.gitee.io/blog/2019/06/29/20190629-001/</id>
     <published>2019-06-29T02:49:49.000Z</published>
     <updated>2019-06-29T10:03:15.637Z</updated>
     
@@ -73,14 +73,14 @@
     </summary>
     
     
-      <category term="Hive" scheme="http://yoursite.com/tags/Hive/"/>
+      <category term="Hive" scheme="https://lei_charles.gitee.io/blog/tags/Hive/"/>
     
   </entry>
   
   <entry>
     <title>My New Post</title>
-    <link href="http://yoursite.com/2019/06/29/My-New-Post/"/>
-    <id>http://yoursite.com/2019/06/29/My-New-Post/</id>
+    <link href="https://lei_charles.gitee.io/blog/2019/06/29/My-New-Post/"/>
+    <id>https://lei_charles.gitee.io/blog/2019/06/29/My-New-Post/</id>
     <published>2019-06-29T02:49:49.000Z</published>
     <updated>2019-06-29T07:35:39.192Z</updated>
     
