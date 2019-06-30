@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lei_charles.gitee.io/blog/20190629-001/</loc>
+    <loc>https://lei_charles.gitee.io/blog/post/15990.html</loc>
     
-    <lastmod>2019-06-29T16:01:07.014Z</lastmod>
+    <lastmod>2019-06-30T02:49:36.247Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lei_charles.gitee.io/blog/categories/index.html</loc>
+    
+    <lastmod>2019-06-30T02:47:06.276Z</lastmod>
     
   </url>
   
@@ -16,13 +23,6 @@
   </url>
   
   <url>
-    <loc>https://lei_charles.gitee.io/blog/categories/index.html</loc>
-    
-    <lastmod>2019-06-29T13:35:49.665Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lei_charles.gitee.io/blog/tags/index.html</loc>
     
     <lastmod>2019-06-29T13:34:48.683Z</lastmod>
@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://lei_charles.gitee.io/blog/hello-world/</loc>
+    <loc>https://lei_charles.gitee.io/blog/post/16107.html</loc>
     
     <lastmod>2019-06-29T07:35:39.193Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lei_charles.gitee.io/blog/My-New-Post/</loc>
+    <loc>https://lei_charles.gitee.io/blog/post/22554.html</loc>
     
     <lastmod>2019-06-29T07:35:39.192Z</lastmod>
     
@@ -51,7 +51,7 @@
   </url>
   
   <url>
-    <loc>https://lei_charles.gitee.io/blog/My-Gallery/</loc>
+    <loc>https://lei_charles.gitee.io/blog/post/undefined.html</loc>
     
     <lastmod>2019-06-29T03:19:53.886Z</lastmod>
     
