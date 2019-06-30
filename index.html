@@ -11,20 +11,14 @@
 
 
 
-  
 
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next gemini" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
-
-  
-  
-  <link rel="stylesheet" href="/blog/lib/needsharebutton/needsharebutton.css">
 
 
 
@@ -46,8 +40,8 @@
     
       
     
-  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
 
 
 
@@ -121,7 +115,7 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="/blog/css/main.css?v=7.1.2">
 
@@ -153,14 +147,14 @@
     back2top: true,
     back2top_sidebar: true,
     fancybox: true,
-    fastclick: false,
-    lazyload: false,
+    fastclick: true,
+    lazyload: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: 'BB1WWBFL9Q',
-      apiKey: '21e57a8b1e5dc70a1d5786ba9bc8d3d8',
-      indexName: 'Hexo Blog',
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -311,8 +305,6 @@
     
 
     
-      
-    
 
     <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -329,10 +321,8 @@
     
 
     
-      
-    
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">1</span></a>
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -347,10 +337,8 @@
     
 
     
-      
-    
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -365,10 +353,8 @@
     
 
     
-      
-    
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">4</span></a>
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
         
@@ -383,8 +369,6 @@
     
 
     
-      
-    
 
     <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
@@ -392,44 +376,11 @@
 
       
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
-        </li>
-      
     </ul>
   
 
   
 
-  
-    <div class="site-search">
-      
-  <div class="algolia-popup popup search-popup">
-  <div class="algolia-search">
-    <div class="algolia-search-input-icon">
-      <i class="fa fa-search"></i>
-    </div>
-    <div class="algolia-search-input" id="algolia-search-input"></div>
-  </div>
-
-  <div class="algolia-results">
-    <div id="algolia-stats"></div>
-    <div id="algolia-hits"></div>
-    <div id="algolia-pagination" class="algolia-pagination"></div>
-  </div>
-
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -612,16 +563,59 @@
       
         
           
-            <p>
-              
-配置java，maven等环境变量
-java:
-export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.ja
-              ...
-            </p>
-          <!--noindex-->
+            <ol>
+<li><p><strong>配置java，maven等环境变量</strong></p>
+<p><strong>java:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/local/java</span><br><span class="line">export PATH=$JAVA_HOME/bin:$PATH</span><br><span class="line">export CLASSPATH=$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$CLASSPATH</span><br></pre></td></tr></table></figure>
+
+<p><strong>maven:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export MVN_HOME=/usr/local/maven</span><br><span class="line">export PATH=$MVN_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>下载 hive-json-schema</strong>    </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 cloudera]# git clone https://github.com/quux00/hive-json-schema.git</span><br><span class="line">正克隆到 'hive-json-schema'...</span><br><span class="line">remote: Enumerating objects: 155, done.</span><br><span class="line">remote: Total 155 (delta 0), reused 0 (delta 0), pack-reused 155</span><br><span class="line">接收对象中: 100% (155/155), 142.85 KiB | 34.00 KiB/s, done.</span><br><span class="line">处理 delta 中: 100% (35/35), done.</span><br><span class="line">[root@cdh01 cloudera]# cd hive-json-schema/</span><br><span class="line">[root@cdh01 hive-json-schema]# ll</span><br><span class="line">总用量 8</span><br><span class="line">-rw-r--r-- 1 root root 1610 6月  27 23:25 pom.xml</span><br><span class="line">-rw-r--r-- 1 root root 3873 6月  27 23:25 README.md</span><br><span class="line">drwxr-xr-x 3 root root   18 6月  27 23:25 src</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>maven 打包</strong>    </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]# mvn package</span><br><span class="line">[INFO] Scanning for projects...</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] Some problems were encountered while building the effective model for net.thornydev:json-hive-schema:jar:1.0</span><br><span class="line">[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 13, column 15</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.</span><br><span class="line">[WARNING] </span><br><span class="line">[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.</span><br><span class="line">[WARNING] </span><br><span class="line">[INFO]                                                                         </span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Building json-hive-schema 1.0</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/main/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ json-hive-schema ---</span><br><span class="line">[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!</span><br><span class="line">[INFO] Compiling 8 source files to /root/github/cloudera/hive-json-schema/target/classes</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ json-hive-schema ---</span><br><span class="line">[debug] execute contextualize</span><br><span class="line">[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!</span><br><span class="line">[INFO] skip non existing resourceDirectory /root/github/cloudera/hive-json-schema/src/test/resources</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ json-hive-schema ---</span><br><span class="line">[INFO] No sources to compile</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-surefire-plugin:2.10:test (default-test) @ json-hive-schema ---</span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"> T E S T S</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"></span><br><span class="line">Results :</span><br><span class="line"></span><br><span class="line">Tests run: 0, Failures: 0, Errors: 0, Skipped: 0</span><br><span class="line"></span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0.jar</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-assembly-plugin:2.4:single (default) @ json-hive-schema ---</span><br><span class="line">[INFO] Building jar: /root/github/cloudera/hive-json-schema/target/json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time: 29.893s</span><br><span class="line">[INFO] Finished at: Thu Jun 27 23:26:07 CST 2019</span><br><span class="line">[INFO] Final Memory: 19M/206M</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[root@cdh01 hive-json-schema]# ll target/</span><br><span class="line">总用量 64</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 archive-tmp</span><br><span class="line">drwxr-xr-x 4 root root    28 6月  27 23:25 classes</span><br><span class="line">drwxr-xr-x 3 root root    25 6月  27 23:25 generated-sources</span><br><span class="line">-rw-r--r-- 1 root root 29091 6月  27 23:25 json-hive-schema-1.0.jar</span><br><span class="line">-rw-r--r-- 1 root root 29124 6月  27 23:26 json-hive-schema-1.0-jar-with-dependencies.jar</span><br><span class="line">drwxr-xr-x 2 root root    28 6月  27 23:25 maven-archiver</span><br><span class="line">drwxr-xr-x 2 root root     6 6月  27 23:26 surefire</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>生成 Hive 建表语句</strong></p>
+<p>测试用 json 数据</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"my doc"</span>,</span><br><span class="line">  <span class="attr">"foo"</span>: &#123;</span><br><span class="line">    <span class="attr">"bar"</span>: <span class="string">"baz"</span>,</span><br><span class="line">    <span class="attr">"quux"</span>: <span class="string">"revlos"</span>,</span><br><span class="line">    <span class="attr">"level1"</span> : &#123;</span><br><span class="line">      <span class="attr">"l2string"</span>: <span class="string">"l2val"</span>,</span><br><span class="line">      <span class="attr">"l2struct"</span>: &#123;</span><br><span class="line">        <span class="attr">"level3"</span>: <span class="string">"l3val"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"wibble"</span>: <span class="string">"123"</span>,</span><br><span class="line">  <span class="attr">"wobble"</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">1</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"lazybones"</span>,</span><br><span class="line">        <span class="attr">"details2"</span>: <span class="number">414</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"entry"</span>: <span class="number">2</span>,</span><br><span class="line">      <span class="attr">"EntryDetails"</span>: &#123;</span><br><span class="line">        <span class="attr">"details1"</span>: <span class="string">"entry 123"</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式一 不可执行的jar</span></span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span><br><span class="line">java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span><br><span class="line"><span class="comment"># 方式二 可执行的jar</span></span><br><span class="line">java -jar target/json-hive-schema-1.0-jar-<span class="keyword">with</span>-dependencies.jar file.json</span><br><span class="line"><span class="keyword">java</span> -jar target/<span class="keyword">json</span>-hive-<span class="keyword">schema</span><span class="number">-1.0</span>-jar-<span class="keyword">with</span>-dependencies.jar file.json table_name</span><br></pre></td></tr></table></figure>
+
+<p>生成建表语句</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -cp target/json-hive-schema-1.0.jar net.thornydev.JsonHiveSchema file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> x (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive-json-schema]<span class="comment"># java -jar target/json-hive-schema-1.0-jar-with-dependencies.jar file.json table_name</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> table_name (</span><br><span class="line">  description <span class="keyword">string</span>,</span><br><span class="line">  foo <span class="keyword">struct</span>&lt;bar:<span class="keyword">string</span>, level1:<span class="keyword">struct</span>&lt;l2string:<span class="keyword">string</span>, l2struct:<span class="keyword">struct</span>&lt;level3:<span class="keyword">string</span>&gt;&gt;, quux:<span class="keyword">string</span>&gt;,</span><br><span class="line">  wibble <span class="keyword">string</span>,</span><br><span class="line">  wobble <span class="built_in">array</span>&lt;<span class="keyword">struct</span>&lt;entry:<span class="built_in">int</span>, entrydetails:<span class="keyword">struct</span>&lt;details1:<span class="keyword">string</span>, details2:<span class="built_in">int</span>&gt;&gt;&gt;)</span><br><span class="line"><span class="keyword">ROW</span> <span class="keyword">FORMAT</span> SERDE <span class="string">'org.openx.data.jsonserde.JsonSerDe'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>验证 Hive 表结构</strong></p>
+<p>测试数据 file.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mydoc"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"baz"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;,&#123;<span class="attr">"entry"</span>:<span class="number">2</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"entry123"</span>&#125;&#125;]&#125;</span><br><span class="line">&#123;<span class="attr">"description"</span>:<span class="string">"mytxt"</span>,<span class="attr">"foo"</span>:&#123;<span class="attr">"bar"</span>:<span class="string">"sas"</span>,<span class="attr">"quux"</span>:<span class="string">"revlos"</span>,<span class="attr">"level1"</span>:&#123;<span class="attr">"l2string"</span>:<span class="string">"l2val"</span>,<span class="attr">"l2struct"</span>:&#123;<span class="attr">"level3"</span>:<span class="string">"l3val"</span>&#125;&#125;&#125;,<span class="attr">"wibble"</span>:<span class="string">"123"</span>,<span class="attr">"wobble"</span>:[&#123;<span class="attr">"entry"</span>:<span class="number">1</span>,<span class="attr">"EntryDetails"</span>:&#123;<span class="attr">"details1"</span>:<span class="string">"lazybones"</span>,<span class="attr">"details2"</span>:<span class="number">414</span>&#125;&#125;]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建表</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; CREATE TABLE table_name (</span><br><span class="line">&gt;   description string,</span><br><span class="line">&gt;   foo struct&lt;bar:string, level1:struct&lt;l2string:string, l2struct:struct&lt;level3:string&gt;&gt;, quux:string&gt;,</span><br><span class="line">&gt;   wibble string,</span><br><span class="line">&gt;   wobble array&lt;struct&lt;entry:int, entrydetails:struct&lt;details1:string, details2:int&gt;&gt;&gt;)</span><br><span class="line">&gt; ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe';</span><br><span class="line">OK</span><br><span class="line">Time taken: 0.135 seconds</span><br></pre></td></tr></table></figure>
+
+<p>加载数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> INPATH <span class="string">'/root/tmp/file.json'</span> OVERWRITE <span class="keyword">INTO</span> <span class="keyword">TABLE</span> table_name ;</span><br></pre></td></tr></table></figure>
+
+<p>查询数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table_name;</span><br><span class="line"><span class="keyword">SELECT</span> wobble.entry, wobble.EntryDetails.details1, wobble.EntryDetails[<span class="number">0</span>].details2 <span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20190627235452203.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br><img src="https://img-blog.csdnimg.cn/20190627235624581.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+</ol>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -788,13 +782,21 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
       
         
           
-            <p>
-              Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-              ...
-            </p>
-          <!--noindex-->
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
           
-          <!--/noindex-->
         
       
     </div>
@@ -961,13 +963,8 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
       
         
           
-            <p>
-              
-              
-            </p>
-          <!--noindex-->
+            
           
-          <!--/noindex-->
         
       
     </div>
@@ -1138,13 +1135,8 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
       
         
           
-            <p>
-              
-              
-            </p>
-          <!--noindex-->
+            
           
-          <!--/noindex-->
         
       
     </div>
@@ -1307,7 +1299,7 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
                   
                     
                   
-                  <a href="http://blog.csdn.net/weixin_43215250" title="CSDN &rarr; http://blog.csdn.net/weixin_43215250" rel="noopener" target="_blank"><i class="fa fa-fw fa-CSDN"></i>CSDN</a>
+                  <a href="http://blog.csdn.net/weixin_43215250" title="CSDN &rarr; http://blog.csdn.net/weixin_43215250" rel="noopener" target="_blank"><i class="fa fa-fw fa-git-square"></i>CSDN</a>
                 </span>
               
                 <span class="links-of-author-item">
@@ -1332,6 +1324,17 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
                   <a href="mailto:lei_charles@163.com" title="E-Mail &rarr; mailto:lei_charles@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                 </span>
               
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/lei_charles" title="Gitee &rarr; https://gitee.com/lei_charles" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i>Gitee</a>
+                </span>
+              
             </div>
           
 
@@ -1341,8 +1344,8 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
           
             <div class="links-of-blogroll motion-element links-of-blogroll-inline">
               <div class="links-of-blogroll-title">
-                <i class="fa  fa-fw fa-globe"></i>
-                Links
+                <i class="fa  fa-fw fa-paper-plane"></i>
+                推荐阅读
               </div>
               <ul class="links-of-blogroll-list">
                 
@@ -1404,7 +1407,7 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 1991 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1434,15 +1437,9 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
 </div>
 
 
-  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
 
 
 
@@ -1481,7 +1478,11 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
 
 
 
+  
 
+
+
+  
 
 
 
@@ -1498,56 +1499,37 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
       
     
   
-  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
 
 
 
-  
-  
 
 
 
-  
-  
 
 
-
-  
-  
-
-
-
-  
-  
-  <script id="ribbon" size="300" alpha="0.6" zindex="-1" src="/blog/lib/canvas-ribbon/canvas-ribbon.js"></script>
 
 
 
 
 
   
-  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
 
   
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js"></script>
 
   
-  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
 
   
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-
-  
-  <script src="/blog/lib/three/three.min.js"></script>
-
-  
-  <script src="/blog/lib/three/three-waves.min.js"></script>
-
-  
-  <script src="/blog/lib/three/canvas_lines.min.js"></script>
-
-  
-  <script src="/blog/lib/three/canvas_sphere.min.js"></script>
 
 
   
@@ -1592,19 +1574,6 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
 
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/blog/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/blog/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/blog/js/algolia-search.js?v=7.1.2"></script>
-
-
 
   
 
@@ -1613,6 +1582,32 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
   
 
   
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: 'https://cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '500px'
+        });
+      });
+    },
+  });
+}
+</script>
+
 
   
 
@@ -1621,26 +1616,6 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
   
 
   
-  
-  
-  <script src="/blog/lib/needsharebutton/needsharebutton.js"></script>
-  <script>
-    
-      pbOptions = {};
-      
-        pbOptions.iconStyle = "box";
-      
-        pbOptions.boxForm = "horizontal";
-      
-        pbOptions.position = "bottomCenter";
-      
-        pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
-      
-      new needShareButton('#needsharebutton-postbottom', pbOptions);
-    
-    
-  </script>
-
 
   
 
@@ -1655,78 +1630,6 @@ export JAVA_HOME=/usr/local/javaexport PATH=$JAVA_HOME/bin:$PATHexport CLASSPATH
   
 
   undefined
-  
-<style>
-#selectionCopyright {
-    position: absolute;
-    display: none;
-    background: rgba(244,67,54,.7);
-    color: #fff;
-    border-radius: 6px;
-    box-shadow: none;
-    border: none;
-    font-size: 14px;
-}
-#selectionCopyright a{
-    color:#fff;
-    border-color: #fff;
-}
-#selectionCopyright::before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 6px 8px 6px 0;
-    border-color: transparent rgba(244,67,54,.7) transparent transparent;
-    position: absolute;
-    left: -8px;
-    top:50%;
-    transform:translateY(-50%);
-}
-</style>
-
-<button id="selectionCopyright" disabled="disabled">本文发表于 [<a href="https://blog.enjoytoshare.club/">吴跟强的博客</a>] 分享记得注明来源哟</button>
-
-<script>
-window.onload = function() {
-    function selectText() {
-        if (document.selection) { //IE浏览器下
-            return document.selection.createRange().text; //返回选中的文字
-        } else { //非IE浏览器下
-            return window.getSelection().toString(); //返回选中的文字
-        }
-    }
-    var content = document.getElementsByTagName("body")[0];
-    var scTip = document.getElementById('selectionCopyright');
-
-    content.onmouseup = function(ev) { //设定一个onmouseup事件
-        var ev = ev || window.event;
-        var left = ev.clientX;//获取鼠标相对浏览器可视区域左上角水平距离距离
-        var top = ev.clientY;//获取鼠标相对浏览器可视区域左上角垂直距离距离
-        var xScroll = Math.max(document.body.scrollLeft, document.documentElement.scrollLeft);//获取文档水平滚动距离
-        var yScroll = Math.max(document.body.scrollTop, document.documentElement.scrollTop);//获取文档垂直滚动距离
-        if (selectText().length > 0) {
-            setTimeout(function() { //设定一个定时器
-                scTip.style.display = 'inline-block';
-                scTip.style.left = left + xScroll + 15 + 'px';//鼠标当前x值
-                scTip.style.top = top + yScroll - 15 + 'px';//鼠标当前y值
-            }, 100);
-        } else {
-            scTip.style.display = 'none';
-        }
-    };
-
-    content.onclick = function(ev) {
-        var ev = ev || window.event;
-        ev.cancelBubble = true;
-    };
-    document.onclick = function() {
-        scTip.style.display = 'none';
-    };
-};
-</script>
-
-
 <script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 <!-- 页面点击小红心 -->
