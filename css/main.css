@@ -2035,7 +2035,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff42e0;
+  background: #4bdbc4;
 }
 .feed-link,
 .chat {
@@ -3243,7 +3243,7 @@ ul.breadcrumb li+li:last-child {
   font-size: 13px;
 }
 .code ::selection {
-  background: #2593a6;
+  background: #9fda31;
   color: #fff;
 }
 .gt-container .gt-comment-content .highlight pre,
@@ -3251,7 +3251,7 @@ ul.breadcrumb li+li:last-child {
   background-color: #2d2d2d;
 }
 .gt-container .gt-comment-content .highlight ::selection {
-  background: #2593a6;
+  background: #8959a8;
   color: #fff;
 }
 .headband {
