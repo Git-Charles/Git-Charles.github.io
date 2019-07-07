@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "d80799a7"
+    });
+  daovoice('update');
+  </script>
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="KopK4f29Qm">
+
+
+
+  
+  
+    
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="//fonts.lug.ustc.edu.cn/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: true,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="命令行参数:    参数 功能描述    help 显示所有操作命令   ls path [watch] 查看当前 znode 中所包含的内容   ls2 path [watch] 查看当前节点数据并能看到更新次数等数据   create 普通创建 -s 含有序列 -e 临时(重启或者超时消失)   get path [watch] 获得当前节点的值   set 设置节点的具体值   stat 查">
+<meta name="keywords" content="Zookeeper">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zookeeper 客户端命令行操作">
+<meta property="og:url" content="https://lei_charles.gitee.io/blog/post/83c34144.html">
+<meta property="og:site_name" content="大数据-ZEALOTS">
+<meta property="og:description" content="命令行参数:    参数 功能描述    help 显示所有操作命令   ls path [watch] 查看当前 znode 中所包含的内容   ls2 path [watch] 查看当前节点数据并能看到更新次数等数据   create 普通创建 -s 含有序列 -e 临时(重启或者超时消失)   get path [watch] 获得当前节点的值   set 设置节点的具体值   stat 查">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-07-07T12:17:26.232Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zookeeper 客户端命令行操作">
+<meta name="twitter:description" content="命令行参数:    参数 功能描述    help 显示所有操作命令   ls path [watch] 查看当前 znode 中所包含的内容   ls2 path [watch] 查看当前节点数据并能看到更新次数等数据   create 普通创建 -s 含有序列 -e 临时(重启或者超时消失)   get path [watch] 获得当前节点的值   set 设置节点的具体值   stat 查">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="大数据-ZEALOTS" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="https://lei_charles.gitee.io/blog/post/83c34144">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Zookeeper 客户端命令行操作 | 大数据-ZEALOTS</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e6c20d2ff15bf7268abc8d18d17032a0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">大数据-ZEALOTS</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">专注分享大数据,Java,Linux等相关</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lei_charles.gitee.io/blog/blog/post/83c34144.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="lei_charles">
+      <meta itemprop="description" content="把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。">
+      <meta itemprop="image" content="/blog/images/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="大数据-ZEALOTS">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Zookeeper 客户端命令行操作
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-07-07 21:11:55 / 修改时间：20:17:26" itemprop="dateCreated datePublished" datetime="2019-07-07T21:11:55+08:00">2019-07-07</time>
+            </span>
+          
+
+          
+            
+
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Zookeeper/" itemprop="url" rel="index"><span itemprop="name">Zookeeper</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          <br>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">本文字数：</span>
+              
+              <span title="本文字数">6.5k</span>
+            </span>
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              
+              <span title="阅读时长">6 分钟</span>
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>命令行参数:</strong></p>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">help</td>
+<td align="center">显示所有操作命令</td>
+</tr>
+<tr>
+<td align="center">ls path [watch]</td>
+<td align="center">查看当前 znode 中所包含的内容</td>
+</tr>
+<tr>
+<td align="center">ls2 path [watch]</td>
+<td align="center">查看当前节点数据并能看到更新次数等数据</td>
+</tr>
+<tr>
+<td align="center">create</td>
+<td align="center">普通创建 -s 含有序列 -e 临时(重启或者超时消失)</td>
+</tr>
+<tr>
+<td align="center">get path [watch]</td>
+<td align="center">获得当前节点的值</td>
+</tr>
+<tr>
+<td align="center">set</td>
+<td align="center">设置节点的具体值</td>
+</tr>
+<tr>
+<td align="center">stat</td>
+<td align="center">查看节点状态</td>
+</tr>
+<tr>
+<td align="center">delete</td>
+<td align="center">删除节点</td>
+</tr>
+<tr>
+<td align="center">rmr</td>
+<td align="center">递归删除节点</td>
+</tr>
+</tbody></table>
+<ol>
+<li><p><strong>help</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 0] <span class="built_in">help</span></span><br><span class="line">ZooKeeper -server host:port cmd args</span><br><span class="line">	connect host:port</span><br><span class="line">	get path [watch]</span><br><span class="line">	ls path [watch]</span><br><span class="line">	<span class="built_in">set</span> path data [version]</span><br><span class="line">	rmr path</span><br><span class="line">	delquota [-n|-b] path</span><br><span class="line">	quit </span><br><span class="line">	printwatches on|off</span><br><span class="line">	create [-s] [-e] path data acl</span><br><span class="line">	<span class="built_in">stat</span> path [watch]</span><br><span class="line">	close </span><br><span class="line">	ls2 path [watch]</span><br><span class="line">	<span class="built_in">history</span> </span><br><span class="line">	listquota path</span><br><span class="line">	setAcl path acl</span><br><span class="line">	getAcl path</span><br><span class="line">	sync path</span><br><span class="line">	redo cmdno</span><br><span class="line">	addauth scheme auth</span><br><span class="line">	delete path [version]</span><br><span class="line">	setquota -n|-b val path</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>ls</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 1] ls /</span><br><span class="line">[isr_change_notification, hbase, admin, zookeeper, consumers, config, storm, spark, brokers, controller_epoch]</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>ls2</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 2] ls2 /</span><br><span class="line">[isr_change_notification, hbase, admin, zookeeper, consumers, config, storm, spark, brokers, controller_epoch]</span><br><span class="line">cZxid = 0x0</span><br><span class="line">ctime = Thu Jan 01 08:00:00 CST 1970</span><br><span class="line">mZxid = 0x0</span><br><span class="line">mtime = Thu Jan 01 08:00:00 CST 1970</span><br><span class="line">pZxid = 0x5900000004</span><br><span class="line">cversion = 56</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 0</span><br><span class="line">numChildren = 10</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>创建普通节点</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 4] create /<span class="built_in">test</span> <span class="string">"today"</span></span><br><span class="line">Created /<span class="built_in">test</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 5] create /<span class="built_in">test</span>/subtest <span class="string">"today"</span></span><br><span class="line">Created /<span class="built_in">test</span>/subtest</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>获得节点的值</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 6] get /<span class="built_in">test</span></span><br><span class="line"><span class="string">"today"</span></span><br><span class="line">cZxid = 0xa600000002</span><br><span class="line">ctime = Sun Jul 07 18:58:21 CST 2019</span><br><span class="line">mZxid = 0xa600000002</span><br><span class="line">mtime = Sun Jul 07 18:58:21 CST 2019</span><br><span class="line">pZxid = 0xa600000003</span><br><span class="line">cversion = 1</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 7</span><br><span class="line">numChildren = 1</span><br><span class="line">[zk: localhost:2181(CONNECTED) 7] get /<span class="built_in">test</span>/subtest</span><br><span class="line"><span class="string">"today"</span></span><br><span class="line">cZxid = 0xa600000003</span><br><span class="line">ctime = Sun Jul 07 18:58:50 CST 2019</span><br><span class="line">mZxid = 0xa600000003</span><br><span class="line">mtime = Sun Jul 07 18:58:50 CST 2019</span><br><span class="line">pZxid = 0xa600000003</span><br><span class="line">cversion = 0</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 7</span><br><span class="line">numChildren = 0</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>创建短暂节点</strong></p>
+<p>退出当前客户端，该临时节点会被删除。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建短暂节点</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 1] create -e /<span class="built_in">test</span>/shorttest <span class="string">"short"</span></span><br><span class="line">Created /<span class="built_in">test</span>/shorttest</span><br><span class="line"><span class="comment"># 在当前客户端是能查看到的</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 2] ls /<span class="built_in">test</span></span><br><span class="line">[shorttest, subtest]</span><br><span class="line"><span class="comment"># 闭退出当前客户端</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 3] quit</span><br><span class="line">Quitting...</span><br><span class="line">2019-07-07 19:05:03,872 [myid:] - INFO  [main-EventThread:ClientCnxn<span class="variable">$EventThread</span>@509] - EventThread shut down</span><br><span class="line">2019-07-07 19:05:03,874 [myid:] - INFO  [main:ZooKeeper@684] - Session: 0x16bcc12129e0002 closed</span><br><span class="line"><span class="comment">#重启客户端</span></span><br><span class="line">[root@hadoop01 zookeeper]<span class="comment"># bin/zkCli.sh </span></span><br><span class="line"><span class="comment"># 再次查看根目录下短暂节点已经删除</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 0] ls /<span class="built_in">test</span></span><br><span class="line">[subtest]</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>创建带序号的节点</strong></p>
+<p>如果原来节点下没有节点，序号从0开始依次递增。如果原节点下已有2个节点，则再排序时从2开始，以此类推。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 2] create /<span class="built_in">test</span>/order <span class="string">"order"</span></span><br><span class="line">Created /<span class="built_in">test</span>/order</span><br><span class="line">[zk: localhost:2181(CONNECTED) 3] create -s /<span class="built_in">test</span>/order/test1 <span class="string">"test1"</span></span><br><span class="line">Created /<span class="built_in">test</span>/order/test10000000000</span><br><span class="line">[zk: localhost:2181(CONNECTED) 4] create -s /<span class="built_in">test</span>/order/test2 <span class="string">"test2"</span></span><br><span class="line">Created /<span class="built_in">test</span>/order/test20000000001</span><br><span class="line">[zk: localhost:2181(CONNECTED) 5] create -s /<span class="built_in">test</span>/order/test2 <span class="string">"test3"</span></span><br><span class="line">Created /<span class="built_in">test</span>/order/test20000000002</span><br><span class="line">[zk: localhost:2181(CONNECTED) 6] create -s /<span class="built_in">test</span>/order/test3 <span class="string">"test3"</span></span><br><span class="line">Created /<span class="built_in">test</span>/order/test30000000003</span><br><span class="line"><span class="comment"># 此处由于上面在 /test 节点下创建过一个临时节点，故从3开始</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 7] create -s /<span class="built_in">test</span>/order1 <span class="string">"ordertest"</span> </span><br><span class="line">Created /<span class="built_in">test</span>/order10000000003</span><br><span class="line">[zk: localhost:2181(CONNECTED) 8] ls /<span class="built_in">test</span></span><br><span class="line">[order10000000003, order, subtest]</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>修改节点数据值</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改前，值为 "order"</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 17] get /<span class="built_in">test</span>/order            </span><br><span class="line"><span class="string">"order"</span></span><br><span class="line">cZxid = 0xa60000000b</span><br><span class="line">ctime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">mZxid = 0xa60000000b</span><br><span class="line">mtime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">pZxid = 0xa60000000f</span><br><span class="line">cversion = 4</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 7</span><br><span class="line">numChildren = 4</span><br><span class="line"><span class="comment"># 将值修改为 "123"</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 18] <span class="built_in">set</span> /<span class="built_in">test</span>/order <span class="string">"123"</span></span><br><span class="line">cZxid = 0xa60000000b</span><br><span class="line">ctime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">mZxid = 0xa600000016</span><br><span class="line">mtime = Sun Jul 07 19:21:10 CST 2019</span><br><span class="line">pZxid = 0xa60000000f</span><br><span class="line">cversion = 4</span><br><span class="line">dataVersion = 1</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 5</span><br><span class="line">numChildren = 4</span><br><span class="line"><span class="comment"># 修改后，值为 "123"</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 19] get /<span class="built_in">test</span>/order      </span><br><span class="line"><span class="string">"123"</span></span><br><span class="line">cZxid = 0xa60000000b</span><br><span class="line">ctime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">mZxid = 0xa600000016</span><br><span class="line">mtime = Sun Jul 07 19:21:10 CST 2019</span><br><span class="line">pZxid = 0xa60000000f</span><br><span class="line">cversion = 4</span><br><span class="line">dataVersion = 1</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 5</span><br><span class="line">numChildren = 4</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>监听节点的值变化</strong></p>
+<ol>
+<li><p>在节点hadoop01上注册监听 /test/order 节点数据变化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 20] get /<span class="built_in">test</span>/order watch</span><br><span class="line"><span class="string">"123"</span></span><br><span class="line">cZxid = 0xa60000000b</span><br><span class="line">ctime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">mZxid = 0xa600000016</span><br><span class="line">mtime = Sun Jul 07 19:21:10 CST 2019</span><br><span class="line">pZxid = 0xa60000000f</span><br><span class="line">cversion = 4</span><br><span class="line">dataVersion = 1</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 5</span><br><span class="line">numChildren = 4</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p>在hadoop02主机上修改/test/order节点的数据”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 1] <span class="built_in">set</span> /<span class="built_in">test</span>/order <span class="string">"order-hadoop02"</span></span><br><span class="line">cZxid = 0xa60000000b</span><br><span class="line">ctime = Sun Jul 07 19:12:12 CST 2019</span><br><span class="line">mZxid = 0xa600000018</span><br><span class="line">mtime = Sun Jul 07 19:24:57 CST 2019</span><br><span class="line">pZxid = 0xa60000000f</span><br><span class="line">cversion = 4</span><br><span class="line">dataVersion = 2</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 16</span><br><span class="line">numChildren = 4</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p>观察hadoop01主机收到数据变化的监听 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 21] </span><br><span class="line">WATCHER::</span><br><span class="line"></span><br><span class="line">WatchedEvent state:SyncConnected <span class="built_in">type</span>:NodeDataChanged path:/<span class="built_in">test</span>/order</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><p><strong>节点的子节点变化监听(路径变化)</strong></p>
+<ol>
+<li><p>在hadoop01主机上注册监听/test节点的子节点变化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 2] ls /<span class="built_in">test</span> watch</span><br><span class="line">[order1, order10000000003, order20000000005, order, subtest]</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p>在hadoop02主机/test节点上创建子节点</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 0] create /<span class="built_in">test</span>/watchtest <span class="string">"watchtest"</span></span><br><span class="line">Created /<span class="built_in">test</span>/watchtest</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p>观察hadoop01主机收到子节点变化的监听</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 2] </span><br><span class="line">WATCHER::</span><br><span class="line"></span><br><span class="line">WatchedEvent state:SyncConnected <span class="built_in">type</span>:NodeChildrenChanged path:/<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+</ol>
+<p>​</p>
+</li>
+<li><p><strong>删除节点</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看节点</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 2] ls /<span class="built_in">test</span>          </span><br><span class="line">[order1, order10000000003, order20000000005, order, watchtest, subtest]</span><br><span class="line"><span class="comment"># 删除/test/order1，但是该节点下面还有节点</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 3] delete /<span class="built_in">test</span>/order1</span><br><span class="line">Node not empty: /<span class="built_in">test</span>/order1</span><br><span class="line"><span class="comment"># 查看 /test 节点，order1 仍然存在</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 4] ls /<span class="built_in">test</span>           </span><br><span class="line">[order1, order10000000003, order20000000005, order, watchtest, subtest]</span><br><span class="line">[zk: localhost:2181(CONNECTED) 5] ls /<span class="built_in">test</span>/subtest</span><br><span class="line">[]</span><br><span class="line"><span class="comment"># 删除/test/subtest,该节点下面没有其他节点</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 6] delete /<span class="built_in">test</span>/subtest</span><br><span class="line"><span class="comment"># 删除成功</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 8] ls /<span class="built_in">test</span>            </span><br><span class="line">[order1, order10000000003, order20000000005, order, watchtest]</span><br></pre></td></tr></table></figure>
+
+<p>​</p>
+</li>
+<li><p><strong>递归删除节点</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 递归删除 /test/order1 节点</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 9] rmr /<span class="built_in">test</span>/order1</span><br><span class="line"><span class="comment"># 删除成功</span></span><br><span class="line">[zk: localhost:2181(CONNECTED) 10] ls /<span class="built_in">test</span></span><br><span class="line">[order10000000003, order20000000005, order, watchtest]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看节点状态</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[zk: localhost:2181(CONNECTED) 11] <span class="built_in">stat</span> /<span class="built_in">test</span></span><br><span class="line">cZxid = 0xa600000002</span><br><span class="line">ctime = Sun Jul 07 18:58:21 CST 2019</span><br><span class="line">mZxid = 0xa600000002</span><br><span class="line">mtime = Sun Jul 07 18:58:21 CST 2019</span><br><span class="line">pZxid = 0xa600000023</span><br><span class="line">cversion = 10</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 7</span><br><span class="line">numChildren = 4</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+      
+    </div>
+    <div>
+      
+        
+      
+    </div>
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="https://ws4.sinaimg.cn/large/007S6Cabgy1g4ifukebwoj30w00w0416.jpg" alt="lei_charles 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="https://ws3.sinaimg.cn/large/007S6Cabgy1g4j148ff4kj30go0p0mzp.jpg" alt="lei_charles 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/blog/tags/Zookeeper/" rel="tag"><i class="fa fa-tag"></i> # Zookeeper</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/post/702ca9c6.html" rel="next" title="利用 Logback 打印项目日志">
+                <i class="fa fa-chevron-left"></i> 利用 Logback 打印项目日志
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <a href="/blog/">
+              <img class="site-author-image" itemprop="image" src="/blog/images/logo.jpg" alt="[object global]">
+              </a>
+            
+              <p class="site-author-name" itemprop="name">lei_charles</p>
+              <div class="site-description motion-element" itemprop="description">把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/blog/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/blog/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="http://blog.csdn.net/weixin_43215250" title="CSDN &rarr; http://blog.csdn.net/weixin_43215250" rel="noopener" target="_blank"><i class="fa fa-fw fa-git-square"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/Git-Charles" title="GitHub &rarr; https://github.com/Git-Charles" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:lei_charles@163.com" title="E-Mail &rarr; mailto:lei_charles@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://gitee.com/lei_charles" title="Gitee &rarr; https://gitee.com/lei_charles" rel="noopener" target="_blank"><i class="fa fa-fw fa-gitlab"></i>Gitee</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-paper-plane"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="http://www.alloyteam.com/nav/" rel="noopener" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="http://www.chuangzaoshi.com/code" rel="noopener" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="http://www.36zhen.com/t?id=3448" rel="noopener" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="http://e.xitu.io/" rel="noopener" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="https://www.v2ex.com/" rel="noopener" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="https://www.v2ex.com/" rel="noopener" target="_blank">印记中文</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 1991 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lei_charles</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">17k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    
+    <span title="站点阅读时长">16 分钟</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/utils.js?v=7.1.2"></script>
+
+  <script src="/blog/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/affix.js?v=7.1.2"></script>
+
+  <script src="/blog/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/blog/js/scrollspy.js?v=7.1.2"></script>
+<script src="/blog/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+<script>
+if ($('body').find('div.pdf').length) {
+  $.ajax({
+    type: 'GET',
+    url: 'https://cdn.jsdelivr.net/npm/pdfobject@2/pdfobject.min.js',
+    dataType: 'script',
+    cache: true,
+    success: function() {
+      $('body').find('div.pdf').each(function(i, o) {
+        PDFObject.embed($(o).attr('target'), $(o), {
+          pdfOpenParams: {
+            navpanes: 0,
+            toolbar: 0,
+            statusbar: 0,
+            pagemode: 'thumbs',
+            view: 'FitH'
+          },
+          PDFJS_URL: '/lib/pdf/web/viewer.html',
+          height: $(o).attr('height') || '500px'
+        });
+      });
+    },
+  });
+}
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 19465,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  undefined
+<script src="/blog/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/blog/js/clicklove.js"></script>
