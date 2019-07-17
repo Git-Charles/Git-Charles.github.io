@@ -167,17 +167,29 @@
 
 
 
-  <meta name="description" content="把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。">
+  <meta name="description" content="方法一 分别在 HiveServer2 和 WebHCat Server 所在的服务器上创建 /etc/hive/auxlib 目录  123456789[root@cdh01 hive]# hostnamecdh01.cnyimi.cn[root@cdh01 hive]# pwd/etc/hive[root@cdh01 hive]# ll总用量 0drwxr-xr-x 2 root root">
+<meta name="keywords" content="大数据,CDH,Hive">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My Gallery">
-<meta property="og:url" content="https://lei_charles.gitee.io/blog/post/undefined.html">
+<meta property="og:title" content="CDH 中配置 Hive 的辅助 JAR 目录">
+<meta property="og:url" content="https://lei_charles.gitee.io/blog/post/e3546363.html">
 <meta property="og:site_name" content="大数据-ZEALOTS">
-<meta property="og:description" content="把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。">
+<meta property="og:description" content="方法一 分别在 HiveServer2 和 WebHCat Server 所在的服务器上创建 /etc/hive/auxlib 目录  123456789[root@cdh01 hive]# hostnamecdh01.cnyimi.cn[root@cdh01 hive]# pwd/etc/hive[root@cdh01 hive]# ll总用量 0drwxr-xr-x 2 root root">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-29T03:19:53.886Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626220431471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626214148756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626214256526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626215034600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190626215057298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2019062622035187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190627210726372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190627210811572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190627210846529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190627211143649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-17T06:01:35.930Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Gallery">
-<meta name="twitter:description" content="把酒问青天，天若有情天亦;举杯邀明月，月如无恨月长圆。">
+<meta name="twitter:title" content="CDH 中配置 Hive 的辅助 JAR 目录">
+<meta name="twitter:description" content="方法一 分别在 HiveServer2 和 WebHCat Server 所在的服务器上创建 /etc/hive/auxlib 目录  123456789[root@cdh01 hive]# hostnamecdh01.cnyimi.cn[root@cdh01 hive]# pwd/etc/hive[root@cdh01 hive]# ll总用量 0drwxr-xr-x 2 root root">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190626220431471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70">
 
 
 
@@ -187,7 +199,7 @@
 
   
   
-  <link rel="canonical" href="https://lei_charles.gitee.io/blog/post/undefined">
+  <link rel="canonical" href="https://lei_charles.gitee.io/blog/post/e3546363">
 
 
 
@@ -197,7 +209,7 @@
   };
 </script>
 
-  <title>My Gallery | 大数据-ZEALOTS</title>
+  <title>CDH 中配置 Hive 的辅助 JAR 目录 | 大数据-ZEALOTS</title>
   
 
 
@@ -422,7 +434,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lei_charles.gitee.io/blog/blog/post/undefined.html">
+    <link itemprop="mainEntityOfPage" href="https://lei_charles.gitee.io/blog/blog/post/e3546363.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lei_charles">
@@ -439,7 +451,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">My Gallery
+          <h2 class="post-title" itemprop="name headline">CDH 中配置 Hive 的辅助 JAR 目录
 
               
             
@@ -465,12 +477,41 @@
                 
               
 
-              <time title="创建时间：2019-06-29 11:19:53" itemprop="dateCreated datePublished" datetime="2019-06-29T11:19:53+08:00">2019-06-29</time>
+              <time title="创建时间：2019-06-27 08:52:23" itemprop="dateCreated datePublished" datetime="2019-06-27T08:52:23+08:00">2019-06-27</time>
             </span>
           
 
           
+            
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-17 14:01:35" itemprop="dateModified" datetime="2019-07-17T14:01:35+08:00">2019-07-17</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/Hive/" itemprop="url" rel="index"><span itemprop="name">Hive</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -492,7 +533,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">0</span>
+              <span title="本文字数">1.7k</span>
             </span>
           
 
@@ -504,7 +545,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">1 分钟</span>
+              <span title="阅读时长">2 分钟</span>
             </span>
           
 
@@ -523,7 +564,51 @@
       
 
       
-        
+        <h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a><strong>方法一</strong></h5><ol>
+<li><p>分别在 HiveServer2 和 WebHCat Server 所在的服务器上创建 /etc/hive/auxlib 目录</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 hive]# hostname</span><br><span class="line">cdh01.cnyimi.cn</span><br><span class="line">[root@cdh01 hive]# pwd</span><br><span class="line">/etc/hive</span><br><span class="line">[root@cdh01 hive]# ll</span><br><span class="line">总用量 0</span><br><span class="line">drwxr-xr-x 2 root root   6 6月  26 21:52 auxlib</span><br><span class="line">lrwxrwxrwx 1 root root  27 6月  26 21:56 conf -&gt; /etc/alternatives/hive-conf</span><br><span class="line">drwxr-xr-x 2 root root 326 6月  26 21:56 conf.cloudera.hive</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://img-blog.csdnimg.cn/20190626220431471.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br> 如果没有在 HiveServer2 或 WebHCat Server  所在的服务器创建的该目录，重启时会报以下异常。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">+ ERROR: HIVE_AUX_JARS_PATH is configured in Cloudera Manager as /etc/hive/auxlib. </span><br><span class="line">   However directory /etc/hive/auxlib does not exist. </span><br><span class="line">   When configured, directory specified in HIVE_AUX_JARS_PATH must be created and managed manually before starting Hive.</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="2">
+<li><p>Hive –&gt; 配置 –&gt; 搜索 jar </p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/hive/auxlib</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://img-blog.csdnimg.cn/20190626214148756.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+<li><p>Hive –&gt; 配置 –&gt; 搜索 hive-env.sh</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HIVE_AUX_JARS_PATH=/etc/hive/auxlib</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://img-blog.csdnimg.cn/20190626214256526.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+<li><p>重启 Hive</p>
+<p> <img src="https://img-blog.csdnimg.cn/20190626215034600.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br> <img src="https://img-blog.csdnimg.cn/20190626215057298.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br> <img src="https://img-blog.csdnimg.cn/2019062622035187.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+</ol>
+<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a><strong>方法二</strong></h5><ol>
+<li><p>分别在 HiveServer2 和     Hive Metastore Server 所在的服务器上创建 Jar 存放目录</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@cdh01 lib]# pwd;ll</span><br><span class="line">/data/hive/lib</span><br><span class="line">总用量 84</span><br><span class="line">-rw-r--r-- 1 root root 82101 6月  27 20:53 json-serde-1.3.7-jar-with-dependencies.jar</span><br></pre></td></tr></table></figure>
+
+<p> <strong>注意：</strong><br>如果 Hive Metastore 与 HiveServer2 不在同另一台主机上，​​那么要在这两台机器上创建相同的目录，但是 JAR 文件需要上传到 HiveServer2 主机上。</p>
+</li>
+<li><p>Hive -&gt; 配置 -&gt; 搜索 hive-site.xml</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;hive.reloadable.aux.jars.path&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;/data/hive/lib&lt;/value&gt;</span><br><span class="line">    &lt;description&gt;Path to Hive UDF JAR files.&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://img-blog.csdnimg.cn/20190627210726372.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+<li><p>部署客户端配置，重启 Hive。<br><img src="https://img-blog.csdnimg.cn/20190627210811572.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br><img src="https://img-blog.csdnimg.cn/20190627210846529.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt><br><img src="https://img-blog.csdnimg.cn/20190627211143649.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzIxNTI1MA==,size_16,color_FFFFFF,t_70" alt></p>
+</li>
+</ol>
+<p><strong>优缺点：</strong></p>
+<p>方法一方式设置 Hive CLI 和 Beeline 均适用，但是目录位置必须为  <code>/etc/hive/auxlib</code>。</p>
+<p>方法二方式设置只对 Beeline 适用，Hive CLI 方式无法识别 Jar 包，优点在于目录位置可以随意指定，使用时需要执行执行 <code>RELOAD</code> 命令(好像要执行两次)即可加载到新增 Jar 包。</p>
+<p><strong>参考 CDH 官方文档:</strong></p>
+<p><a href="https://www.cloudera.com/documentation/enterprise/latest/topics/cm_mc_hive_udf.html" target="_blank" rel="noopener">https://www.cloudera.com/documentation/enterprise/latest/topics/cm_mc_hive_udf.html</a></p>
+
       
     </div>
 
@@ -592,6 +677,19 @@
 
     <footer class="post-footer">
       
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/blog/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> # 大数据</a>
+          
+            <a href="/blog/tags/CDH/" rel="tag"><i class="fa fa-tag"></i> # CDH</a>
+          
+            <a href="/blog/tags/Hive/" rel="tag"><i class="fa fa-tag"></i> # Hive</a>
+          
+        </div>
+      
 
       
       
@@ -613,8 +711,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/post/15990.html" rel="next" title="利用 JsonSerde 为复杂 JSON 格式数据创建 Hive 表结构">
-                <i class="fa fa-chevron-left"></i> 利用 JsonSerde 为复杂 JSON 格式数据创建 Hive 表结构
+              <a href="/blog/post/a9dd80d9.html" rel="next" title="ESXi主机上的虚拟机安装VMware Tools">
+                <i class="fa fa-chevron-left"></i> ESXi主机上的虚拟机安装VMware Tools
               </a>
             
           </div>
@@ -623,8 +721,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/post/16107.html" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
+              <a href="/blog/post/7c11e61.html" rel="prev" title="使用 Hexo + Github 或 Gitee 搭建个人博客">
+                使用 Hexo + Github 或 Gitee 搭建个人博客 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -669,8 +767,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -689,7 +796,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -714,9 +821,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -739,7 +844,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -856,6 +967,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法一"><span class="nav-number">1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#方法二"><span class="nav-number">2.</span> <span class="nav-text">方法二</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -891,7 +1019,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">17k</span>
+    <span title="站点总字数">37k</span>
   
 
   
@@ -902,7 +1030,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">16 分钟</span>
+    <span title="站点阅读时长">33 分钟</span>
   
 </div>
 
